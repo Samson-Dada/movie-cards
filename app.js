@@ -31,17 +31,17 @@ const validateMovieURL = (url) => {
 
 const handleMovieCard = function () {
 	const movieTitle = document.getElementById("movieTitle").value.trim();
-	// const movieURL = document.getElementById("movieURL").value.trim();
-	const testMovieUrl =
-		"https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg";
+	const movieURL = document.getElementById("movieURL").value.trim();
+	// const testMovieUrl =
+	// 	"https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg";
 	titleError.textContent = "";
 	urlError.textContent = "";
 	titleError.style.display = "none";
 	urlError.style.display = "none";
 
 	const titleValidationError = validateMovieTitle(movieTitle);
-	// const urlValidationError = validateMovieURL(movieURL);
-	const urlValidationError = validateMovieURL(testMovieUrl);
+	const urlValidationError = validateMovieURL(movieURL);
+	//const urlValidationError = validateMovieURL(testMovieUrl);
 
 	if (titleValidationError) {
 		titleError.style.display = "block";
@@ -55,7 +55,7 @@ const handleMovieCard = function () {
 
 		movieCard.innerHTML = `
             <h2>${movieTitle}</h2>
-            <img src="${testMovieUrl}" alt="${movieTitle}">
+            <img src="${movieURL}" alt="${movieTitle}">
         `;
 		const movieCardContainer = document.getElementById("movieCards");
 		console.log(movieCardContainer.childElementCount);
