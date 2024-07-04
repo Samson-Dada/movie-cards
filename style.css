@@ -8,18 +8,6 @@ body {
 	color: #333;
 }
 
-/*
-.container {
-	width: 100%;
-	max-width: 500px;
-	padding: 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
-	border-radius: 10px;
-	text-align: center;
-}
-
-*/
 .container {
 	border-radius: 10px;
 	text-align: center;
@@ -35,12 +23,14 @@ h1 {
 }
 
 .input-container {
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 10px; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	background-color: #fff;
 	padding: 20px;
+	/* background-color: red; */
+	min-width: 30%;
 }
 
 input[type="text"],
@@ -55,6 +45,7 @@ input[type="url"] {
 
 button {
 	padding: 10px;
+	margin-top: 15px;
 	background-color: #4e4e1e;
 	color: #fff;
 	border: none;
@@ -74,22 +65,22 @@ button:hover {
 /* Container for the movie cards */
 #movieCards {
 	margin-top: 14px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+	/* background-color: #fff; */
 	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-	gap: 16px; /* Gap between the grid items */
-	/* padding: 16px; */
+	grid-template-columns: repeat(4, 1fr);
 }
 
-/* Style for each movie card */
 .movie-card {
-	background-color: #f0f0f0; /* Light grey background */
-	border: 1px solid #ccc; /* Light grey border */
-	border-radius: 8px; /* Rounded corners */
-	padding: 16px; /* Padding inside each card */
-	text-align: center; /* Center text inside the card */
-	transition: transform 0.3s ease; /* Smooth transition for hover effect */
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 0.4rem;
+	text-align: center;
+	transition: transform 0.3s ease;
+	text-align: left;
+	background-color: #fff;
+	margin: 10px;
 }
 
 .movie-card img {
@@ -102,15 +93,6 @@ button:hover {
 	transform: scale(1.05);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	cursor: pointer;
-}
-
-.movie-card {
-	padding: 15px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	text-align: left;
-	background-color: #fff;
-	margin: 10px;
 }
 
 .movie-card h2 {

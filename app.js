@@ -13,15 +13,18 @@ const validateMovieTitle = (title) => {
 };
 
 const validateMovieURL = (url) => {
-	const urlPattern =
-		/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-	if (!url) {
-		return "Movie URL is required.";
-	}
-	// else if (!urlPattern.test(url)) {
-	// 		return "Invalid URL format.";
-	// 	}
-	else {
+	// url = url.trim;
+	const isValidProtocol =
+		url.startsWith("http://") || url.startsWith("https://");
+
+	const isValidImageFormat =
+		url.endsWith(".jpg") || url.endsWith(".png") || url.endsWith("jpeg");
+
+	if (!isValidProtocol) {
+		return "URL must start with http:// or https://";
+	} else if (!isValidImageFormat) {
+		return "URL must end with .jpg or .png or jpeg";
+	} else {
 		return "";
 	}
 };
@@ -37,7 +40,8 @@ const handleMovieCard = function () {
 	urlError.style.display = "none";
 
 	const titleValidationError = validateMovieTitle(movieTitle);
-	const urlValidationError = validateMovieURL(movieURL);
+	// const urlValidationError = validateMovieURL(movieURL);
+	const urlValidationError = validateMovieURL(testMovieUrl);
 
 	if (titleValidationError) {
 		titleError.style.display = "block";
@@ -53,8 +57,13 @@ const handleMovieCard = function () {
             <h2>${movieTitle}</h2>
             <img src="${testMovieUrl}" alt="${movieTitle}">
         `;
-
-		document.getElementById("movieCards").appendChild(movieCard);
+		const movieCardContainer = document.getElementById("movieCards");
+		console.log(movieCardContainer.childElementCount);
+		if (movieCardContainer.childElementCount === 3) {
+			// movieCardContainer.classList.add('')
+			console.log("yes");
+		}
+		movieCardContainer.appendChild(movieCard);
 
 		document.getElementById("movieTitle").value = "";
 		document.getElementById("movieURL").value = "";
