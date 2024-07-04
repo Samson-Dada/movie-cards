@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Movie Card Generator</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <div class="container">
+      <h1>Movie Card Generator</h1>
+      <div class="input-container">
+         <input type="text" id="movieTitle" placeholder="Enter movie title">
+         <small class="input_error" id="title__error"></small>
+         <input type="url" id="movieURL" placeholder="Enter movie URL">
+         <small class="input_error" id="url__error"></small>
+         <button id="addMovieBtn">Add Movie</button>
+      </div>
+      <div class="movie__container">
+         <div id="movieCards"></div>
+      </div>
+   </div>
+
+   <script src="app.js"></script>
+</body>
+
+</html>
