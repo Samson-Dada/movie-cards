@@ -113,3 +113,13 @@ button:hover {
 	text-align: left;
 	color: red;
 }
+
+/* mobile screen*/
+@media (max-width: 425px) {
+	#movieCards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.movie__container {
+		width: initial;
+	}
+}
